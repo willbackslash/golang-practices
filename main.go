@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"strconv"
+	"strings"
 )
 
 func normalFunction(message string) {
@@ -20,6 +21,15 @@ func returnValue(a int) int {
 
 func doubleReturn(a int) (c, d int) {
 	return a, a * 2
+}
+
+func isPalindrome(text string) bool {
+	var invertedString string
+	for i := len(text) - 1; i >= 0; i-- {
+		invertedString += strings.ToLower(string(text[i]))
+	}
+
+	return invertedString == strings.ToLower(text)
 }
 
 func main() {
@@ -234,4 +244,20 @@ func main() {
 	newSlice := []int{8, 9, 10}
 	slice = append(slice, newSlice...)
 	fmt.Println(slice, len(slice), cap(slice))
+
+	// iterate over slice
+	myslice := []string{"hello", "world", "how", "are", "you?"}
+	for i, value := range myslice {
+		fmt.Println(i, value)
+	}
+
+	// using just the index
+	myslice2 := []string{"hello", "world", "how", "are", "you?"}
+	for i := range myslice2 {
+		fmt.Println(i)
+	}
+
+	fmt.Println("isPalindrome: racecar", isPalindrome("racecar"))
+	fmt.Println("isPalindrome: coke", isPalindrome("coke"))
+	fmt.Println("isPalindrome: Ama", isPalindrome("Ama"))
 }
