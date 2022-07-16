@@ -190,4 +190,25 @@ func main() {
 		fmt.Println("no condition")
 	}
 
+	// defer
+	defer fmt.Println("Hello")
+	fmt.Println("World")
+
+	// continue, break
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+		if i == 2 {
+			fmt.Println("is 2")
+			continue
+		}
+	}
+
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+		if i == 8 {
+			fmt.Println("is 8")
+			break
+		}
+	}
+
 }
