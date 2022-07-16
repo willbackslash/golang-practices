@@ -34,3 +34,6 @@ bool = true, false
 ## complex
 complex64
 complex128
+
+## go packages docs
+https://pkg.go.dev
