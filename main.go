@@ -2,6 +2,22 @@ package main
 
 import "fmt"
 
+func normalFunction(message string) {
+	fmt.Println(message)
+}
+
+func tripleArgumentFunction(a, b int, c int) {
+	fmt.Println(a, b, c)
+}
+
+func returnValue(a int) int {
+	return a * 2
+}
+
+func doubleReturn(a int) (c, d int) {
+	return a, a * 2
+}
+
 func main() {
 	// constants
 	const pi float64 = 3.14
@@ -79,4 +95,14 @@ func main() {
 	// data type print
 	fmt.Printf("type helloMessage: %T\n", helloMessage)
 	fmt.Printf("type number: %T\n", number)
+
+	// functions and anonymous functions
+	normalFunction("Hello World")
+	tripleArgumentFunction(1, 2, 3)
+	value := returnValue(2)
+	fmt.Println("returnValue:", value)
+	value1, value2 := doubleReturn(2)
+	fmt.Println("doubleReturn:", value1, value2)
+	valuea, _ := doubleReturn(2)
+	fmt.Println("doubleReturn:", valuea)
 }
