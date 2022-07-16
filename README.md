@@ -37,3 +37,7 @@ complex128
 
 ## go packages docs
 https://pkg.go.dev
+
+## arrays and slices
+array are immutable
+slices are mutable
