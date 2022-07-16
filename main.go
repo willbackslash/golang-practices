@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"strconv"
+)
 
 func normalFunction(message string) {
 	fmt.Println(message)
@@ -126,5 +130,37 @@ func main() {
 	//	fmt.Println("Forever", counterForever)
 	//	counterForever++
 	//}
+
+	// if
+	valor1 := 1
+	valor2 := 2
+
+	if valor1 == valor2 {
+		fmt.Println("valor1 == valor2")
+	} else {
+		fmt.Println("valor1 != valor2")
+	}
+
+	// and
+
+	if valor1 == 1 && valor2 == 2 {
+		fmt.Println("true")
+	} else {
+		fmt.Println("false")
+	}
+
+	// or
+	if valor1 == 1 || valor2 == 2 {
+		fmt.Println("true")
+	} else {
+		fmt.Println("false")
+	}
+
+	// cast string to int
+	value, err := strconv.Atoi("53")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(value)
 
 }
