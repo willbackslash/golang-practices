@@ -163,4 +163,31 @@ func main() {
 	}
 	fmt.Println(value)
 
+	// switch
+	module := 5 % 2
+	switch module {
+	case 0:
+		fmt.Println("even")
+	default:
+		fmt.Println("odd")
+	}
+
+	switch module := 5 % 2; module {
+	case 0:
+		fmt.Println("even")
+	default:
+		fmt.Println("odd")
+	}
+
+	// switch without condition
+	switchValue := 200
+	switch {
+	case switchValue > 100:
+		fmt.Println("value > 100")
+	case switchValue < 0:
+		fmt.Println("value < 0")
+	default:
+		fmt.Println("no condition")
+	}
+
 }
