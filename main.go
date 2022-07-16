@@ -260,4 +260,20 @@ func main() {
 	fmt.Println("isPalindrome: racecar", isPalindrome("racecar"))
 	fmt.Println("isPalindrome: coke", isPalindrome("coke"))
 	fmt.Println("isPalindrome: Ama", isPalindrome("Ama"))
+
+	// maps
+	m := make(map[string]int)
+	m["Jose"] = 14
+	m["Juan"] = 15
+	fmt.Println(m)
+
+	// iterate over a map
+	for key, value := range m {
+		println(key, value)
+	}
+
+	// searc a value in map
+	// var ok let us know if the key exists
+	foundValue, ok := m["Jose"]
+	fmt.Println(foundValue, ok)
 }
