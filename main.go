@@ -27,4 +27,35 @@ func main() {
 	const squareBase = 11
 	squareArea := squareBase * squareBase
 	fmt.Println("Area cuadrado:", squareArea)
+
+	// math operators
+	// sum
+	x := 10
+	y := 50
+	result := x + y
+	fmt.Println("x + y:", result)
+
+	// subtraction
+	result = y - x
+	fmt.Println("y - x:", result)
+
+	// multiplication
+	result = x * y
+	fmt.Println("x * y:", result)
+
+	// division
+	result = y / x
+	fmt.Println("y / x:", result)
+
+	// modulus
+	result = y % x
+	fmt.Println("y % x:", result)
+
+	// increment
+	x++
+	fmt.Println("x++:", x)
+
+	// decrement
+	x--
+	fmt.Println("x--:", x)
 }
