@@ -59,6 +59,24 @@ func main() {
 	x--
 	fmt.Println("x--:", x)
 
-	// datetypes
+	// fmt
+	helloMessage := "Hello"
+	worldMessage := "World"
+	number := 500
 
+	// Println
+	fmt.Println(helloMessage, worldMessage)
+	fmt.Println(helloMessage, worldMessage)
+
+	// Printf
+	fmt.Printf("%s %d\n", helloMessage, number)
+	fmt.Printf("%v %v\n", helloMessage, number)
+
+	// Sprintf
+	message := fmt.Sprintf("%s %d", helloMessage, number)
+	fmt.Println(message)
+
+	// data type print
+	fmt.Printf("type helloMessage: %T\n", helloMessage)
+	fmt.Printf("type number: %T\n", number)
 }
