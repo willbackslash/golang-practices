@@ -32,6 +32,11 @@ func isPalindrome(text string) bool {
 	return invertedString == strings.ToLower(text)
 }
 
+type car struct {
+	brand string
+	year  int
+}
+
 func main() {
 	// constants
 	const pi float64 = 3.14
@@ -276,4 +281,13 @@ func main() {
 	// var ok let us know if the key exists
 	foundValue, ok := m["Jose"]
 	fmt.Println(foundValue, ok)
+
+	// structs
+	// similar to class in other languages
+	myCar := car{brand: "Ford", year: 2020}
+	fmt.Println(myCar)
+	var otherCar car
+	otherCar.brand = "Toyota"
+	fmt.Println(otherCar)
+
 }
