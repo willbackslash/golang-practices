@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	pk "go-courses/src/mypackage"
 	"log"
 	"strconv"
 	"strings"
@@ -290,4 +291,17 @@ func main() {
 	otherCar.brand = "Toyota"
 	fmt.Println(otherCar)
 
+	// access modifiers
+	var myPublicCar pk.CarPublic
+	myPublicCar.Brand = "Ferrari"
+	fmt.Println(myPublicCar)
+
+	// cant access to private structs and fields
+	//var anotherCar pk.carPrivate
+	//fmt.Println(anotherCar)
+
+	pk.PrintMessage("Hello World from package")
+
+	// cant access to private functions
+	//pk.printMessage("Hello World from package")
 }
