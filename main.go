@@ -38,6 +38,20 @@ type car struct {
 	year  int
 }
 
+type pc struct {
+	ram   int
+	disk  int
+	brand string
+}
+
+func (myPc pc) ping() {
+	fmt.Println(myPc.brand, "pong")
+}
+
+func (myPc *pc) duplicateRAM() {
+	myPc.ram = myPc.ram * 2
+}
+
 func main() {
 	// constants
 	const pi float64 = 3.14
@@ -304,4 +318,22 @@ func main() {
 
 	// cant access to private functions
 	//pk.printMessage("Hello World from package")
+
+	// structs and pointers
+	regular := 50
+	pointer := &regular
+	fmt.Println(regular, pointer)
+	fmt.Println(pointer, *pointer)
+	*pointer = 100
+	fmt.Println(regular, *pointer)
+
+	myPC := pc{ram: 16, disk: 200, brand: "Dell"}
+	fmt.Println(myPC)
+	myPC.ping()
+
+	fmt.Println(myPC)
+	myPC.duplicateRAM()
+	fmt.Println(myPC)
+	myPC.duplicateRAM()
+	fmt.Println(myPC)
 }
