@@ -93,6 +93,10 @@ func sayme(text string, c chan<- string) {
 	c <- text
 }
 
+func sendMessage(text string, c chan<- string) {
+	c <- text
+}
+
 func main() {
 	// constants
 	const pi float64 = 3.14
@@ -406,4 +410,31 @@ func main() {
 	channel := make(chan string, 1)
 	go sayme("goobye!", channel)
 	fmt.Println(<-channel)
+
+	// channels with range, close y select
+	mychan := make(chan string, 2)
+	mychan <- "message 1"
+	mychan <- "message 2"
+	fmt.Println(len(mychan), cap(mychan))
+	close(mychan)
+
+	// iterate over a channel messages
+	for message := range mychan {
+		fmt.Println(message)
+	}
+
+	// select
+	email1 := make(chan string)
+	email2 := make(chan string)
+	go sendMessage("message 1", email1)
+	go sendMessage("message 2", email2)
+
+	for i := 0; i < 2; i++ {
+		select {
+		case m1 := <-email1:
+			fmt.Println("Received email from email1", m1)
+		case m2 := <-email2:
+			fmt.Println("Received email from email2", m2)
+		}
+	}
 }
