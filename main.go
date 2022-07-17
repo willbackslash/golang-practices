@@ -89,6 +89,10 @@ func say(text string, wg *sync.WaitGroup) {
 	fmt.Println(text)
 }
 
+func sayme(text string, c chan<- string) {
+	c <- text
+}
+
 func main() {
 	// constants
 	const pi float64 = 3.14
@@ -396,4 +400,10 @@ func main() {
 		fmt.Println(text)
 	}("Bye!")
 	time.Sleep(time.Second * 1)
+
+	// channels
+	fmt.Println("Hell@!")
+	channel := make(chan string, 1)
+	go sayme("goobye!", channel)
+	fmt.Println(<-channel)
 }
