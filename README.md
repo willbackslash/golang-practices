@@ -50,3 +50,15 @@ https://awesome-go.com
 
 ## run echo server
 > go run echoserver.go
+
+## replace a package for a local version
+> go mod edit -replace github.com/labstack/echo/v4=./echo
+
+## verify modules
+> go mod verify
+
+## remove replacements on go.mod
+go mod edit -drop replace
+
+## remove unused dependencies
+go mod tidy
