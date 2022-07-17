@@ -52,6 +52,11 @@ func (myPc *pc) duplicateRAM() {
 	myPc.ram = myPc.ram * 2
 }
 
+// Stringers
+func (myPc pc) String() string {
+	return fmt.Sprintf("I have %d RAM, %d GB Diks and brand: %s", myPc.ram, myPc.disk, myPc.brand)
+}
+
 func main() {
 	// constants
 	const pi float64 = 3.14
