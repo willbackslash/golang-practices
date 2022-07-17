@@ -47,3 +47,6 @@ slices are mutable
 
 ## search packages
 https://awesome-go.com
+
+## run echo server
+> go run echoserver.go
