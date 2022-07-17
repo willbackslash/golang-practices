@@ -6,6 +6,8 @@ import (
 	"log"
 	"strconv"
 	"strings"
+	"sync"
+	"time"
 )
 
 func normalFunction(message string) {
@@ -80,6 +82,11 @@ func (r rectangle) area() float64 {
 
 func calculateArea(f figure2D) {
 	fmt.Println("Area:", f.area())
+}
+
+func say(text string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Println(text)
 }
 
 func main() {
@@ -376,4 +383,17 @@ func main() {
 	// list of interfaces
 	myInterface := []interface{}{"hello", 12, true, 3.14}
 	fmt.Println(myInterface)
+
+	// Goroutines with waitgroup
+	fmt.Println("Hell@")
+	var wg = sync.WaitGroup{}
+	wg.Add(1)
+	go say("W@rlod", &wg)
+	wg.Wait()
+
+	// goroutines with anonymous functions
+	go func(text string) {
+		fmt.Println(text)
+	}("Bye!")
+	time.Sleep(time.Second * 1)
 }
