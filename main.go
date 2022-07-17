@@ -57,6 +57,31 @@ func (myPc pc) String() string {
 	return fmt.Sprintf("I have %d RAM, %d GB Diks and brand: %s", myPc.ram, myPc.disk, myPc.brand)
 }
 
+// interfaces and list of interfaces
+type figure2D interface {
+	area() float64
+}
+type square struct {
+	side float64
+}
+
+type rectangle struct {
+	width  float64
+	height float64
+}
+
+func (s square) area() float64 {
+	return s.side * s.side
+}
+
+func (r rectangle) area() float64 {
+	return r.width * r.height
+}
+
+func calculateArea(f figure2D) {
+	fmt.Println("Area:", f.area())
+}
+
 func main() {
 	// constants
 	const pi float64 = 3.14
@@ -341,4 +366,14 @@ func main() {
 	fmt.Println(myPC)
 	myPC.duplicateRAM()
 	fmt.Println(myPC)
+
+	// interfaces
+	square := square{side: 10.2}
+	rectangle := rectangle{width: 10.2, height: 20.4}
+	calculateArea(square)
+	calculateArea(rectangle)
+
+	// list of interfaces
+	myInterface := []interface{}{"hello", 12, true, 3.14}
+	fmt.Println(myInterface)
 }
