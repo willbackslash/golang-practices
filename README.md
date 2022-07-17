@@ -41,3 +41,9 @@ https://pkg.go.dev
 ## arrays and slices
 array are immutable
 slices are mutable
+
+## install packages
+> go get <depname>
+
+## search packages
+https://awesome-go.com
